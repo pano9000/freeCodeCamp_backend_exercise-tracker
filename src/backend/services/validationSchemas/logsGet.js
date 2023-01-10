@@ -1,14 +1,19 @@
-const { param } = require("express-validator")
+const { param, query } = require("express-validator")
 
 
-const validationSchema = [
+const queryParams = [
 
-  param("from").optional( { checkFalsy: true } ).isDate(),
-  param("to").optional().isDate(),
-  param("limit").optional().isInt(),
-  param("sort").optional().custom(value => ["asc", "desc"].includes(value)),
+  query("from").optional( { checkFalsy: true } ).isDate(),
+  query("to").optional().isDate(),
+  query("limit").optional().isInt(),
+  query("sort").optional().custom(value => ["asc", "desc"].includes(value)),
 
 ]
 
+const pathParams = [
 
-module.exports = validationSchema
+  param("userId") // add regex here for userId
+]
+
+
+module.exports = { queryParams, pathParams}
