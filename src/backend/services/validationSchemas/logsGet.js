@@ -1,19 +1,14 @@
-const { param, query } = require("express-validator")
+const { queryParams, pathParams }  = require("./params")
 
 
-const queryParams = [
+const logsGetSchema = [
 
-  query("from").optional( { checkFalsy: true } ).isDate(),
-  query("to").optional().isDate(),
-  query("limit").optional().isInt(),
-  query("sort").optional().custom(value => ["asc", "desc"].includes(value)),
+  queryParams.from,
+  queryParams.to,
+  queryParams.limit,
+  queryParams.sort,
+  pathParams.userId
 
 ]
 
-const pathParams = [
-
-  param("userId") // add regex here for userId
-]
-
-
-module.exports = { queryParams, pathParams}
+module.exports = logsGetSchema
