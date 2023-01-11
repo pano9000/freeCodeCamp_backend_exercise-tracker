@@ -3,12 +3,9 @@ const createUser = require("../../services/db/createUser");
 async function usersPost(req, res) {
 
   try {
-
-    console.log("Username:", req.body.username);
-
+    //TODO: validate req.body.username
     const username = req.body.username
     const saveResult = await createUser({ username });
-    console.log("result", saveResult)
 
     if (!saveResult) {
       throw new Error("saving failed")

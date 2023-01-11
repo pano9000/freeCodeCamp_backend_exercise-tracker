@@ -2,6 +2,11 @@
 
 My ~~solution~~ work in Progress for the [Exercise Tracker](https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/url-shortener-microservice) project from [freeCodeCamp](https://www.freecodecamp.org/).
 
+Current Status (`2023 Jan 11`):
+* freeCodeCamp tests are passing
+* Backend Validation is still TODO
+* Frontend work still TODO
+* MongoDB Schemas can still be omptomized (relations need to be modelled still)
 
 Backend:
 * Nodejs

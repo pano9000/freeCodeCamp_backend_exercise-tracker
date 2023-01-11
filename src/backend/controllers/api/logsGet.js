@@ -32,23 +32,20 @@ async function logs(req, res) {
   */
 
   try {
-    console.log(req.params)
-    const { _id: userId } = req.params;
+
+    const { userId } = req.params
     if (userId === undefined || userId === null) {
       throw new Error("userId undefined/null is invalid")
     }
 
     const { from: filterDateFrom, to: filterDateTo, limit: filterQty, sort: optionSort } = req.query
 
-    console.log("userId frpm parasms", userId)
-    console.log(filterDateFrom, filterDateTo, filterQty, optionSort)
-
     // validate -> limit needs to be int, if not -> set to undefined
     // validate -> sort needs to be asc or desc -> alse set to undefined
     // validate -> date needs to be date format -> else set to undefined
 
     const findUserResult = await findUser.findOne({ _id: userId })
-    console.log("finduserresult", findUserResult)
+
     if (findUserResult === null) {
       throw new Error("user not found")
     }
@@ -72,7 +69,7 @@ async function logs(req, res) {
     }
 
     const searchObject = createSearchObject()
-    console.log("searchObject", searchObject )
+
     const findResult = await findExercises.findAll(searchObject, queryOptions); //TODO: check if pagination of results should be a thing?
 
     //findResult is always an array it, either empty or filled - undefined errors are caught in findExercises already, so no need to handle them here anymore

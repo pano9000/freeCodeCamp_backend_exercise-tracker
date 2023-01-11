@@ -1,8 +1,11 @@
+require('dotenv').config()
 const express = require('express')
 const app = express()
 const cors = require('cors')
-require('dotenv').config()
+const morgan = require("morgan")
 const routes = require("./src/backend/routes/")
+
+app.use(morgan("combined"))
 
 app.use(cors())
 app.use(express.static('public'))
