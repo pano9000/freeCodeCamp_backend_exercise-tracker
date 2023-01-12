@@ -2,8 +2,8 @@
 module.exports = {
 
   check: {
-    exercisePost: require("./exercisePost"),
-    logsGet: require("./logsGet")
+    exercisePost: require("./validation.schema.exercisePost"),
+    logsGet: require("./validation.schema.logsGet")
   },
   handler: require("./handler")
 
