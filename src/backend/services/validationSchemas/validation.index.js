@@ -5,6 +5,6 @@ module.exports = {
     exercisePost: require("./validation.schema.exercisePost"),
     logsGet: require("./validation.schema.logsGet")
   },
-  handler: require("./handler")
+  handler: require("./validation.handler")
 
 }
