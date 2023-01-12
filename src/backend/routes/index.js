@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const controllers = require("../controllers")
-const validation = require("../services/validationSchemas/")
+const validation = require("../services/validationSchemas/validation.index")
 
 
 router.get("*", controllers.rateLimiter.get);
