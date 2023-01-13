@@ -3,33 +3,33 @@ const { param, query } = require("express-validator")
 const queryParams = {
 
   "from":
-    query("from", { errorHandling: "resetToDefault" })
+    query("from", { errorHandling: "resetParamErrors" })
     .optional()
     .isDate(),
 
   "to":
-    query("to", { errorHandling: "resetToDefault" })
+    query("to", { errorHandling: "resetParamErrors" })
     .optional()
     .isDate(),
 
   "limit":
-    query("limit", { errorHandling: "resetToDefault" })
+    query("limit", { errorHandling: "resetParamErrors" })
     .optional()
     .isInt(),
 
   "sort":
-    query("sort", { errorHandling: "resetToDefault" })
+    query("sort", { errorHandling: "resetParamErrors" })
     .optional()
     .isIn(["asc", "desc"]),
 }
 
 const pathParams = {
   "userId":
-    param("userId", { errorHandling: "sendError" })
+    param("userId", { errorHandling: "fatalError" })
     .matches(/^user_[a-z0-9]{24}$/),
 
   "exerciseId":
-    param("exerciseId", { errorHandling: "sendError" })
+    param("exerciseId", { errorHandling: "fatalError" })
     .matches(/^exerc_[a-z0-9]{24}$/)
 }
 
