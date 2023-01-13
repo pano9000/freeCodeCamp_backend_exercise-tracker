@@ -1,4 +1,4 @@
-const { queryParams, pathParams }  = require("./params")
+const { queryParams, pathParams }  = require("./validation.schemaShared.params")
 
 
 const logsGetSchema = [
