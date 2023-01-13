@@ -5,6 +5,7 @@ describe("freeCodeCamp Project Passing Tests", () => {
 
   const url = "http://localhost:3002";
 
+  beforeEach( done => setTimeout(done, 300) );
 
   it(" You can POST to /api/users with form data username to create a new user.", async () => {
 
