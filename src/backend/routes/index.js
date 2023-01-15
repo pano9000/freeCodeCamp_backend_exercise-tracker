@@ -32,6 +32,15 @@ router.get(
   controllers.api.users.userId.get
 )
 
+
+router.delete(
+  "/api/users/:userId",
+  validation.check.userIdGet,
+  validation.handler,
+  //authentication check,
+  controllers.api.users.userId.delete
+)
+
 /* future routes
 router.patch("/api/users/:userId", controllers.api.users.userId.patch)
 */
