@@ -17,6 +17,7 @@ module.exports = {
 
       userId: {
         get: require("./api/userIdGet"),
+        delete: require("./api/userIdDelete"),
         /* TODO: future route, to get single user info and also update user info
         patch: require("./api/userIdPatch")
         */
