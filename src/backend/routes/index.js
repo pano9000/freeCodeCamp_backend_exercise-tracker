@@ -38,6 +38,13 @@ router.post(
   controllers.api.users.exercises.post
 );
 
+// exercise deletion route
+router.delete(
+  "/api/users/:userId/exercises/:exerciseId",
+  // TODO: authentication
+  controllers.api.users.exercises.delete
+)
+
 router.get(
   "/api/users/:userId",
   validation.check.userIdGet,

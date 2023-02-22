@@ -32,7 +32,8 @@ module.exports = {
       },
 
       exercises: {
-        post: require("./api/exercisesPost")
+        post: require("./api/exercisesPost"),
+        delete: require("./api/exerciseDelete")
       }
 
     },
